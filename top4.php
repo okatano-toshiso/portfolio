@@ -293,7 +293,7 @@ Template Name: toppage4
 
 <div class="wrapper text-center">
 	<h1>WORKS</h1>
-	<p>制作実績1111</p>
+	<p>制作実績</p>
 <?php
 
 $paged = (int) get_query_var('paged');
