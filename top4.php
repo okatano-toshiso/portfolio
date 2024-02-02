@@ -12,7 +12,7 @@ Template Name: toppage4
     left: 0px;
     width: 100%;
     height: 540px;
-    background-image: url(<?php the_field('image01',34); ?>);
+    background-image: url(<?php the_field('image01', 34); ?>);
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: none;
@@ -48,22 +48,22 @@ Template Name: toppage4
     animation: anime 25s linear 0s infinite ;
 }
 .sample li:nth-child(1) { 
-    background-image: url(<?php the_field('image01',34); ?>)   /* 背景画像を入力して下さい */
+    background-image: url(<?php the_field('image01', 34); ?>)   /* 背景画像を入力して下さい */
     -webkit-animation-delay: 5s;
     animation-delay: 5s;
 }
 .sample li:nth-child(2) {
-    background-image: url(<?php the_field('image02',34); ?>);
+    background-image: url(<?php the_field('image02', 34); ?>);
     -webkit-animation-delay: 10s;
     animation-delay: 10s;
 }
 .sample li:nth-child(3) {
-    background-image: url(<?php the_field('image03',34); ?>);
+    background-image: url(<?php the_field('image03', 34); ?>);
     -webkit-animation-delay: 15s;
     animation-delay: 15s;
 }
 .sample li:nth-child(4) {
-    background-image: url(<?php the_field('image04',34); ?>);
+    background-image: url(<?php the_field('image04', 34); ?>);
     -webkit-animation-delay: 20s;
     animation-delay: 20s;
 }
@@ -110,7 +110,7 @@ Template Name: toppage4
 </style>
 <div class="takasa45 hidden-lg hidden-md hidden-xs"></div>
 <ul class="sample text-center">
-	<div style="position:relative;  z-index: 1; width: 100%; margin: 0 auto; text-align: center;"><img src="<?php the_field('logo',249); ?>" class="slideimage"></div>
+	<div style="position:relative;  z-index: 1; width: 100%; margin: 0 auto; text-align: center;"><img src="<?php the_field('logo', 249); ?>" class="slideimage"></div>
     <li></li>
     <li></li>
     <li></li>
@@ -126,7 +126,7 @@ Template Name: toppage4
 				<div class="takasa30"></div>
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-						<div class="contensimage2" style="background-image:url(<?php the_field('image01',35); ?>)">
+						<div class="contensimage2" style="background-image:url(<?php the_field('image01', 35); ?>)">
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
@@ -166,7 +166,7 @@ Template Name: toppage4
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-						<div class="contensimage2" style="background-image:url(<?php the_field('image02',35); ?>)">
+						<div class="contensimage2" style="background-image:url(<?php the_field('image02', 35); ?>)">
 						</div>
 					</div>
 				</div>
@@ -182,7 +182,7 @@ Template Name: toppage4
 				<div class="takasa30"></div>
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-						<div class="contensimage2" style="background-image:url(<?php the_field('image02',35); ?>)">
+						<div class="contensimage2" style="background-image:url(<?php the_field('image02', 35); ?>)">
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
@@ -211,7 +211,7 @@ Template Name: toppage4
 				<div class="takasa30"></div>
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-						<div class="contensimage2" style="background-image:url(<?php the_field('image03',35); ?>)">
+						<div class="contensimage2" style="background-image:url(<?php the_field('image03', 35); ?>)">
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
@@ -252,7 +252,7 @@ Template Name: toppage4
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-						<div class="contensimage2" style="background-image:url(<?php the_field('image04',35); ?>)">
+						<div class="contensimage2" style="background-image:url(<?php the_field('image04', 35); ?>)">
 						</div>
 					</div>
 				</div>
@@ -268,7 +268,7 @@ Template Name: toppage4
 				<div class="takasa30"></div>
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-						<div class="contensimage2" style="background-image:url(<?php the_field('image04',35); ?>)">
+						<div class="contensimage2" style="background-image:url(<?php the_field('image04', 35); ?>)">
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
@@ -291,16 +291,13 @@ Template Name: toppage4
 </div>
 <hr />
 
-
-
-
-<div class="takasa60"></div>
 <div class="wrapper text-center">
 	<h1>WORKS</h1>
-	<p>制作実績</p>
+	<p>制作実績1111</p>
 	<div class="takasa30"></div>
 <?php
-$paged = (int) get_query_var('paged'); 
+$paged = (int) get_query_var('paged');
+echo var_dump($paged);
 $args = array(
 'posts_per_page' => 18,
 'category' => 6,
@@ -308,12 +305,12 @@ $args = array(
 );
 $the_query = new WP_Query($args);
 $customPosts = get_posts($args);
-if($customPosts) : foreach($customPosts as $post) : setup_postdata( $post );
-$image = get_post_meta($post->ID, capture, false);
-foreach($image as $image){
-$image = wp_get_attachment_url($image);
-}									
-?>
+if($customPosts) : foreach($customPosts as $post) : setup_postdata($post);
+    $image = get_post_meta($post->ID, capture, false);
+    foreach($image as $image) {
+        $image = wp_get_attachment_url($image);
+    }
+    ?>
 	<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 text-left" style="height: 230px; overflow: hidden;">
 		<div class="yokohaba95">
 			<a href="<?php the_permalink(); ?>">
@@ -328,7 +325,7 @@ $image = wp_get_attachment_url($image);
 	</div>
 <?php endforeach; ?>
 <?php else : ?>
-<?php 
+<?php
 endif;
 ?>
 	<div class="takasa30"></div>
