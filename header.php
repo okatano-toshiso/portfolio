@@ -91,7 +91,7 @@
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 zero">
 				<div class="col-lg-2 col-md-2 hidden-sm hidden-xs text-center zero menu">
 					<div class="takasa15"></div>
-					<a href="<?php echo home_url(); ?>/profile/" class="zero"><p>PROFILE88888</p></a>
+					<a href="<?php echo home_url(); ?>/profile/" class="zero"><p>PROFILE</p></a>
 				</div>
 				<div class="col-lg-2 col-md-2 hidden-sm hidden-xs text-center zero menu">
 					<div class="takasa15"></div>
