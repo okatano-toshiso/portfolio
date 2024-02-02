@@ -1,0 +1,180 @@
+@charset "UTF-8";
+/* CSS Document */
+body {
+	background-color: #fff;
+}
+p {
+font-size: 12px;
+}
+.zero {
+margin: 0 !important;
+padding: 0 !important;
+}
+.text-center{
+text-align: center;
+}
+.text-left{
+text-align: left;
+}
+.text-right{
+text-align: right;
+}
+.takasa15 {
+	width: 100%;
+	height: 15px;
+	clear: both;
+}
+.takasa30 {
+	width: 100%;
+	height: 30px;
+	clear: both;
+}
+.takasa45 {
+	width: 100%;
+	height: 45px;
+	clear: both;
+}
+.takasa60 {
+	width: 100%;
+	height: 60px;
+	clear: both;
+}
+.takasa75 {
+	width: 100%;
+	height: 75px;
+	clear: both;
+}
+.takasa90 {
+	width: 100%;
+	height: 90px;
+	clear: both;
+}
+.takasa105 {
+	width: 100%;
+	height: 105px;
+	clear: both;
+}
+.takasa120 {
+	width: 100%;
+	height: 120px;
+	clear: both;
+}
+.takasa135 {
+	width: 100%;
+	height: 135px;
+	clear: both;
+}
+.takasa150 {
+	width: 100%;
+	height: 150px;
+	clear: both;
+}
+.takasa165 {
+	width: 100%;
+	height: 105px;
+	clear: both;
+}
+.takasa180 {
+	width: 100%;
+	height: 105px;
+	clear: both;
+}
+.takasa195 {
+	width: 100%;
+	height: 105px;
+	clear: both;
+}
+.takasa210 {
+	width: 100%;
+	height: 105px;
+	clear: both;
+}
+.takasa225 {
+	width: 100%;
+	height: 105px;
+	clear: both;
+}
+.takasa240 {
+	width: 100%;
+	height: 105px;
+	clear: both;
+}
+.takasa255 {
+	width: 100%;
+	height: 105px;
+	clear: both;
+}
+.takasa270 {
+	width: 100%;
+	height: 105px;
+	clear: both;
+}
+.takasa285 {
+	width: 100%;
+	height: 105px;
+	clear: both;
+}
+.takasa300 {
+	width: 100%;
+	height: 105px;
+	clear: both;
+}
+.haba95 {
+	width: 95%;
+	margin: 0 auto;
+}
+.haba90 {
+	width: 90%;
+	margin: 0 auto;
+}
+.haba85 {
+	width: 85%;
+	margin: 0 auto;
+}
+.haba80 {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.aka {
+	color: #B20002;
+}
+.aka_back{
+	background-color: #B20002 !important;
+} 
+a .aka_back  {
+	text-decoration: none;
+} 
+.aka_back:hover{
+	background-color:rgba(231,78,81,1.00) !important;
+} 
+
+.aqua {
+	color: #33ccff;
+}
+.glay{
+	color: #666666;
+}
+.pink{
+	color: #ff74ff;
+}
+.green{
+	color: #006633;
+}
+.orange{
+	color: #ff9900;
+}
+.ao{
+	color: #000066;
+}
+.kuro{
+	color: #000000;
+}
+
+.shiro{
+	color: #ffffff !important;
+}
+@media (max-width:640px){
+}
+
+
