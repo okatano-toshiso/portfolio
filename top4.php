@@ -294,19 +294,19 @@ Template Name: toppage4
 <div class="wrapper text-center">
 	<h1>WORKS</h1>
 	<p>制作実績1111</p>
-	<div class="takasa30"></div>
 <?php
+
 $paged = (int) get_query_var('paged');
-echo var_dump($paged);
 $args = array(
-'posts_per_page' => 18,
-'category' => 6,
-'order' => 'DESC'
+    'posts_per_page' => 18,
+    'category' => 6,
+    'order' => 'DESC'
 );
+
 $the_query = new WP_Query($args);
 $customPosts = get_posts($args);
 if($customPosts) : foreach($customPosts as $post) : setup_postdata($post);
-    $image = get_post_meta($post->ID, capture, false);
+    $image = get_post_meta($post->ID, 'capture', false);
     foreach($image as $image) {
         $image = wp_get_attachment_url($image);
     }
