@@ -7,105 +7,21 @@ Template Name: toppage4
 
 <style>
 .sample {
-    position:relative;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 540px;
     background-image: url(<?php the_field('image01', 34); ?>);
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: none;
-	overflow: hidden;
 }
-.slideimage {
-	width: 80%;
-	max-width: 640px;
-	min-width: 300px;
-	margin-top: 20px;
-}
-
-
-
 @media screen and (max-width: 768px) {
-/* 768pxまでの幅の場合に適応される */
-.sample {
-    height: auto;
-}
-}
-
-.sample li {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: none;
-    opacity: 0;
-    -webkit-animation: anime 25s linear 0s infinite ;
-    animation: anime 25s linear 0s infinite ;
-}
-.sample li:nth-child(1) { 
-    background-image: url(<?php the_field('image01', 34); ?>)   /* 背景画像を入力して下さい */
-    -webkit-animation-delay: 5s;
-    animation-delay: 5s;
+.sample li:nth-child(1) {
+    background-image: url(<?php the_field('image01', 34); ?>);
 }
 .sample li:nth-child(2) {
     background-image: url(<?php the_field('image02', 34); ?>);
-    -webkit-animation-delay: 10s;
-    animation-delay: 10s;
 }
 .sample li:nth-child(3) {
     background-image: url(<?php the_field('image03', 34); ?>);
-    -webkit-animation-delay: 15s;
-    animation-delay: 15s;
 }
 .sample li:nth-child(4) {
     background-image: url(<?php the_field('image04', 34); ?>);
-    -webkit-animation-delay: 20s;
-    animation-delay: 20s;
 }
-@-webkit-keyframes anime { 
-    0% {
-        -webkit-animation-timing-function: ease-in;
-        opacity: 0;
-    }
-    10% {
-        -webkit-transform: scale(1.0);
-        opacity: 1;
-    }
-    40% {
-        -webkit-transform: scale(1.0);
-            -webkit-animation-timing-function: ease-out;
-        opacity: 1;
-    }
-    50% {
-        -webkit-transform: scale(1.0);
-        opacity: 0;
-    }
-    100% { opacity: 0 }
-}
-@keyframes anime { 
-    0% {
-        animation-timing-function: ease-in;
-        opacity: 0;
-    }
-    10% {
-        transform: scale(1.0);
-        opacity: 1;
-    }
-    40% {
-        transform: scale(1.0);
-            animation-timing-function: ease-out;
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.0);
-        opacity: 0;
-    }
-    100% { opacity: 0 }
 }
 </style>
 <div class="takasa45 hidden-lg hidden-md hidden-xs"></div>
@@ -137,7 +53,7 @@ Template Name: toppage4
 							</div>
 							<div class="blueline"></div>
 							<p>
-								私のプロフィール、スキルセット、保有資格、実務経験、使用プログラム言語、ツールを紹介しています。<br />
+								プロフィール、スキルセット、保有資格、実務経験、使用プログラム言語、ツールを紹介しています。<br />
 								これまでに在籍した会社とその会社内における業務内容および履歴書と職務経歴書もダウンロードできます。<br />
 							</p>
 						</div>
