@@ -76,7 +76,7 @@ Template Name: works
 </div>
 <div class="takasa15"></div>
 <hr />
-<div class="wrapper text-center">
+<div class="wrapper text-center pb_90">
 	<h2>一覧</h2>
 	<section id="wrapper" class='pb_60' style="background-color: #fff;">
 		<?php
