@@ -44,19 +44,18 @@
 <script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/jquery-3.1.1.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
 <script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/iscroll.min.js"></script>
-<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/drawer.min.js"></script>
 <script>
-$(document).ready(function() {
-	$('.drawer').drawer();
-});
+	$(document).ready(function() {
+		$('.drawer').drawer();
+	});
 </script>
 <script>
-$(document).ready(function() {
-	$('#media').carousel({
-		pause: true,
-		interval: false,
+	$(document).ready(function() {
+		$('#media').carousel({
+			pause: true,
+			interval: false,
+		});
 	});
-});
 </script>
 </body>
 </html>

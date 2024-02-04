@@ -12,9 +12,7 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri()); ?>/css/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri()); ?>/css/default.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri()); ?>/css/drawer_mini.css" />
-	<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/css/vegas.min.css">
 	<!--Google Web Fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Baumans" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -22,12 +20,6 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_template_directory_uri()); ?>/css/bootstrap-theme.css" />
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-	<!--[if lt IE 9]>
-	<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/html5.js"></script>
-	<![endif]-->
-	<!--[if lt IE 9]>
-	<script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/html5.js"></script>
-	<![endif]-->
 	<?php wp_head(); ?>
 </head>
 <body class="drawer drawer--right">
