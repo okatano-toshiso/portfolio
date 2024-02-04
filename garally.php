@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: garally
+Template Name: works
 */
 ?>
 <?php get_header(); ?>
@@ -25,7 +25,7 @@ Template Name: garally
 <div id="slideimage2" style="background-image:url(<?php the_field('logo',247); ?>)" class="text-center">
 	<div class="takasa60 hidden-lg hidden-md hidden-xs"></div>
 	<h1>
-		GARALLY
+		WORKS
 	</h1>
 </div>
 
@@ -83,13 +83,16 @@ Template Name: garally
 <hr />
 <div class="wrapper text-center">
 	<h2>一覧</h2>
-	
 	<section id="wrapper" style="background-color: #fff;">
 <?php
-if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
-elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
-else { $paged = 1; }
-
+	if ( get_query_var('paged') ) {
+		$paged = get_query_var('paged');
+	} elseif (get_query_var('page')) {
+		$paged = get_query_var('page');
+	} else {
+		$paged = 1;
+	}
+	$brand = empty($brand) ? null : $brand;
 	$args = Array(
 		'post_type' => 'post',
 		'posts_per_page' => 8,
@@ -97,15 +100,15 @@ else { $paged = 1; }
 		'category' => 6,
 		'meta_query' => array(array(
 		'key' => 'brand',
-		'value' => null,
+		'value' => $brand,
 		'compare' =>'LIKE',
 		),
 		'relation' => 'AND'
 		),
 	);
-query_posts($args); 
-if (have_posts()) :
-while(have_posts()) : the_post();
+	query_posts($args); 
+	if (have_posts()) :
+		while(have_posts()) : the_post();
 ?>
 		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 text-left" style="min-height: 420px; overflow: hidden;">
 			<div class="yokohaba95">

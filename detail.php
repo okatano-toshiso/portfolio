@@ -3,7 +3,7 @@
 <div id="slideimage2" style="background-image:url(<?php the_field('logo',247); ?>)" class="text-center">
 	<div class="takasa60 hidden-lg hidden-md hidden-xs"></div>
 	<h1>
-		GARALLY
+		WORKS
 	</h1>
 </div>
 
@@ -34,11 +34,7 @@
 			</div>
 		</div>
 	</div>
-	
-	
-	
-	
-	<?php echo the_field(program); ?>
+	<?php echo the_field('program'); ?>
 	<div class="takasa90"></div>
 	<?php $ctm = get_post_meta($post->ID, 'image01', true);?>
 	<?php if(empty($ctm)):?>

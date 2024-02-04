@@ -9,7 +9,7 @@
             <?php
                 $post = $wp_query->post;
                 if ( in_category('work') ) {
-                    include(TEMPLATEPATH.'/work.php');
+                    include(TEMPLATEPATH.'/detail.php');
                 } elseif ( in_category('information') ) {
                     include(TEMPLATEPATH.'/information.php');
                 } else {
