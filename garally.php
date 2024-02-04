@@ -5,15 +5,15 @@ Template Name: garally
 ?>
 <?php get_header(); ?>
 <?php
-     //URLとして渡されたパラメータを取得し、
-     //$par01という変数に入れておく。
-     $brand = $_GET['brand'];
+	if (!empty($_GET['brand'])){
+		$brand = $_GET['brand'];
+	}
 ?>
 <style>
 .<?php echo $brand ?> {
 	background-color: #ccc;
 }
-.a<?php echo $price ?> {
+.<?php echo $price ?> {
 	background-color: #ccc;
 }
 .<?php echo $type ?> {
@@ -28,8 +28,6 @@ Template Name: garally
 		GARALLY
 	</h1>
 </div>
-
-
 
 
 <div class="takasa30"></div>
@@ -91,19 +89,20 @@ Template Name: garally
 if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
 elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
 else { $paged = 1; }
-$args = Array(
-	'post_type' => 'post',
-	'posts_per_page' => 8,
-	'paged' => $paged,
-	'category' => 6,
-	'meta_query' => array(array(
-	'key' => 'brand',
-	'value' => $brand,
-	'compare' =>'LIKE',
-	),
-	'relation' => 'AND'
-	),
-    );
+
+	$args = Array(
+		'post_type' => 'post',
+		'posts_per_page' => 8,
+		'paged' => $paged,
+		'category' => 6,
+		'meta_query' => array(array(
+		'key' => 'brand',
+		'value' => null,
+		'compare' =>'LIKE',
+		),
+		'relation' => 'AND'
+		),
+	);
 query_posts($args); 
 if (have_posts()) :
 while(have_posts()) : the_post();
@@ -138,12 +137,14 @@ while(have_posts()) : the_post();
 		<div class="takasa45"></div>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color: #fff;">
 			<div class="pagenavi" style="display: inline-block;">
-				<?php if (function_exists("pagination")) {
-				pagination($additional_loop->max_num_pages);
-				} ?>
+				<?php
+						if (function_exists("pagination")) {
+							pagination($additional_loop->max_num_pages);
+						}
+				?>
 			</div>
 		</div>
-	</section>	
+	</section>
 	<div class="takasa60"></div>
 </div>
 <?php get_footer(); ?>

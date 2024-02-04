@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: toppage4
+Template Name: portfolio_top
 */
 ?>
 <?php get_header(); ?>
