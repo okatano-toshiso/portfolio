@@ -547,8 +547,6 @@ ul {
     margin-top: 20px;
 }
 
-
-
 @media screen and (max-width: 768px) {
 
     /* 768pxまでの幅の場合に適応される */
@@ -598,23 +596,23 @@ ul {
     }
 
     10% {
-        -webkit-transform: scale(1.0);
+        -webkit-transform: scale(1);
         opacity: 1;
     }
 
     40% {
-        -webkit-transform: scale(1.0);
+        -webkit-transform: scale(1);
         -webkit-animation-timing-function: ease-out;
         opacity: 1;
     }
 
     50% {
-        -webkit-transform: scale(1.0);
+        -webkit-transform: scale(1);
         opacity: 0;
     }
 
     100% {
-        opacity: 0
+        opacity: 0;
     }
 }
 
@@ -625,22 +623,62 @@ ul {
     }
 
     10% {
-        transform: scale(1.0);
+        transform: scale(1);
         opacity: 1;
     }
 
     40% {
-        transform: scale(1.0);
+        transform: scale(1);
         animation-timing-function: ease-out;
         opacity: 1;
     }
 
     50% {
-        transform: scale(1.0);
+        transform: scale(1);
         opacity: 0;
     }
 
     100% {
-        opacity: 0
+        opacity: 0;
     }
+}
+
+.pt_30 {
+    padding-top: 30px;
+}
+
+.pt_60 {
+    padding-top: 60px;
+}
+
+.pt_90 {
+    padding-top: 90px;
+}
+
+.pt_120 {
+    padding-top: 120px;
+}
+
+.pt_150 {
+    padding-top: 150px;
+}
+
+.pb_30 {
+    padding-bottom: 30px;
+}
+
+.pb_60 {
+    padding-bottom: 60px;
+}
+
+.pb_90 {
+    padding-bottom: 90px;
+}
+
+.pb_120 {
+    padding-bottom: 120px;
+}
+
+.pb_150 {
+    padding-bottom: 150px;
 }
