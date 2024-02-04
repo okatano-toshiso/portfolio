@@ -1,14 +1,13 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Twenty_Fifteen
+ * @subpackage PORTFOLIO
  */
 ?>
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<div class="footer01">
 		<div class="footer_area">
-			<div class="row zero">
-				<div class="takasa15"></div>
+			<div class="row zero PT_30">
 				<div class="col-lg-1 col-md-1 hidden-sm hidden-xs text-center zero">
 				</div>
 				<div class="col-lg-2 col-md-2 hidden-sm hidden-xs text-center zero">
@@ -48,19 +47,16 @@
 <script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/drawer.min.js"></script>
 <script>
 $(document).ready(function() {
-	 $('.drawer').drawer();
+	$('.drawer').drawer();
 });
 </script>
 <script>
 $(document).ready(function() {
-  $('#media').carousel({
-    pause: true,
-    interval: false,
-  });
+	$('#media').carousel({
+		pause: true,
+		interval: false,
+	});
 });
 </script>
-
-
-
 </body>
 </html>
