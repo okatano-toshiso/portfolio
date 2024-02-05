@@ -419,10 +419,11 @@ Text Domain: Profile Site
 }
 
 .brandtitle {
-    font-family: serif;
-    color: #aaa;
-    font-size: 24px;
     margin: 0 auto;
+    padding: 15px 0 0;
+    color: #aaa;
+    font-family: serif;
+    font-size: 24px;
 }
 
 .blueline {

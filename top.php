@@ -4,24 +4,9 @@ Template Name: portfolio_top
 */
 ?>
 <?php get_header(); ?>
-
 <style>
 .sample {
-    background-image: url(<?php the_field('image01', 34); ?>);
-}
-@media screen and (max-width: 768px) {
-.sample li:nth-child(1) {
-    background-image: url(<?php the_field('image01', 34); ?>);
-}
-.sample li:nth-child(2) {
-    background-image: url(<?php the_field('image02', 34); ?>);
-}
-.sample li:nth-child(3) {
-    background-image: url(<?php the_field('image03', 34); ?>);
-}
-.sample li:nth-child(4) {
-    background-image: url(<?php the_field('image04', 34); ?>);
-}
+    background-image: url(<?php the_field('key_visual'); ?>);
 }
 </style>
 <div class="takasa45 hidden-lg hidden-md hidden-xs"></div>
@@ -33,18 +18,17 @@ Template Name: portfolio_top
 		<div class="wrapper">
 			<div class="row pt_30 pb_30">
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-					<div class="contensimage2" style="background-image:url(<?php the_field('image01', 35); ?>)"></div>
+					<div class="contensimage2" style="background-image:url(<?php the_field('label01_image'); ?>)"></div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
 					<div class="takasa30 hidden-lg hidden-md"></div>
 					<div class="haba90">
 						<div class="text-center">
-							<h2 class="brandtitle zero">PROFILE</h2>
+							<h2 class="brandtitle "><?php the_field('label01'); ?></h2>
 						</div>
 						<div class="blueline"></div>
 						<p>
-							プロフィール、スキルセット、保有資格、実務経験、使用プログラム言語、ツールを紹介しています。<br />
-							これまでに在籍した会社とその会社内における業務内容および履歴書と職務経歴書もダウンロードできます。<br />
+							<?php the_field('label01_description'); ?>
 						</p>
 					</div>
 				</div>
@@ -53,49 +37,50 @@ Template Name: portfolio_top
 	</div>
 </div>
 <hr />
-<div class="brand2 hidden-sm hidden-xs">
+<div class="brand2 pt_60">
 	<div class="contensimage2">
 		<div class="wrapper">
 			<div class="row pt_30 pb_30">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-					<div class="haba90">
-						<div class="text-center">
-							<h2 class="brandtitle zero">WEB</h2>
-						</div>
-						<div class="blueline"></div>
-						<p>
-							私がこれまでに関わってきたサイト制作実績とその制作における自己の役割分担を記載しています。<br />
-							ワードプレスのＷＥＢサイト制作、デザイン、サーバ構築、データベース構築ほか実績を記載しています。
-						</p>
+				<div class="hidden-lg hidden-md col-sm-12 col-xs-12 text-left">
+					<div class="contensimage2" style="background-image:url(<?php the_field('label02_image'); ?>)">
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-					<div class="contensimage2" style="background-image:url(<?php the_field('image02', 35); ?>)">
+					<div class="haba90">
+						<div class="text-center">
+							<h2 class="brandtitle "><?php the_field('label02'); ?></h2>
+						</div>
+						<div class="blueline"></div>
+						<p>
+							<?php the_field('label02_description'); ?>
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 text-left hidden-sm hidden-xs">
+					<div class="contensimage2" style="background-image:url(<?php the_field('label02_image'); ?>)">
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="brand2 hidden-lg hidden-md">
+<div class="brand2 pt_60">
 	<div class="contensimage2">
 		<div class="wrapper">
 			<div class="row pt_30 pb_30">
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-					<div class="contensimage2" style="background-image:url(<?php the_field('image02', 35); ?>)">
+					<div class="contensimage2" style="background-image:url(<?php the_field('label03_image'); ?>)">
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
 					<div class="takasa30 hidden-lg hidden-md"></div>
 					<div class="haba90">
 						<div class="text-center">
-							<h2 class="brandtitle zero">WEB</h2>
+							<h2 class="brandtitle "><?php the_field('label03'); ?></h2>
 						</div>
 						<div class="blueline"></div>
 						<p>
-							私がこれまでに関わってきたサイト制作実績とその制作における自己の役割分担を記載しています。<br />
-							ワードプレスのＷＥＢサイト制作、デザイン、サーバ構築、データベース構築ほか実績を記載しています。<br />
-							サイトだけでなくランディングページ他も紹介しております。
+							<?php the_field('label03_description'); ?>
 						</p>
 					</div>
 				</div>
@@ -108,71 +93,23 @@ Template Name: portfolio_top
 	<div class="contensimage2">
 		<div class="wrapper">
 			<div class="row pt_30 pb_30">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-					<div class="contensimage2" style="background-image:url(<?php the_field('image03', 35); ?>)">
+				<div class="hidden-lg hidden-md col-sm-12 col-xs-12 text-left">
+					<div class="contensimage2" style="background-image:url(<?php the_field('label04_image'); ?>)">
 					</div>
 				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-					<div class="takasa30 hidden-lg hidden-md"></div>
-					<div class="haba90">
-						<div class="text-center">
-							<h2 class="brandtitle zero">BANNER</h2>
-						</div>
-						<div class="blueline"></div>
-						<p>
-							Yahoo!、googleなどのアドネットワーク用に作成したバナー実績を紹介しています。<br />
-							静的バナーだけでなくFLASHバナーの制作実績もございます。
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<hr />
-<div class="brand2 hidden-sm hidden-xs">
-	<div class="contensimage2">
-		<div class="wrapper">
-			<div class="row pt_30 pb_30">
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
 					<div class="haba90">
 						<div class="text-center">
-							<h2 class="brandtitle zero">PROPOSAL</h2>
+							<h2 class="brandtitle "><?php the_field('label04'); ?></h2>
 						</div>
 						<div class="blueline"></div>
 						<p>
-							これまでに制作した企画書、やサイトレポートを紹介しております。
-							エンジニアというだけでなくディレクションや企画、進行部分に関しても経験はございますので、指標にしていただければ幸いです。
+							<?php the_field('label04_description'); ?>
 						</p>
 					</div>
 				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-					<div class="contensimage2" style="background-image:url(<?php the_field('image04', 35); ?>)">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="brand2 hidden-lg hidden-md">
-	<div class="contensimage2">
-		<div class="wrapper">
-			<div class="row pt_30 pb_30">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-					<div class="contensimage2" style="background-image:url(<?php the_field('image04', 35); ?>)">
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-					<div class="takasa30 hidden-lg hidden-md"></div>
-					<div class="haba90">
-						<div class="text-center">
-							<h2 class="brandtitle zero">PROPOSAL</h2>
-						</div>
-						<div class="blueline"></div>
-						<p>
-							これまでに制作した企画書、やサイトレポートを紹介しております。
-							エンジニアというだけでなくディレクションや企画、進行部分に関しても経験はございますので、指標にしていただければ幸いです。
-						</p>
+				<div class="col-lg-6 col-md-6 text-left hidden-sm hidden-xs">
+					<div class="contensimage2" style="background-image:url(<?php the_field('label04_image'); ?>)">
 					</div>
 				</div>
 			</div>

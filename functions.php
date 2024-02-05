@@ -93,3 +93,8 @@ function pagination($pages = '', $range = 1)
         }
     }
 }
+
+add_action( 'init' , 'my_remove_post_editor_support' );
+function my_remove_post_editor_support() {
+    remove_post_type_support( 'page', 'editor' );//本文
+}
