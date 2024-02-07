@@ -1,4 +1,6 @@
 <?php
+include_once('functions-include/acf.php');
+
 if (! isset($content_width)) {
     $content_width = 660;
 }

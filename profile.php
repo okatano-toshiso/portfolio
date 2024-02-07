@@ -11,7 +11,7 @@ Template Name:  profile
 <article class="container">
     <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-            <h1>岡田　敏裕<span style="font-size:12px; margin-left:15px;">okada toshihiro</span></h1>
+            <h1><?php the_field('surname'); ?>　<?php the_field('given_name'); ?><span style="font-size:12px; margin-left:15px;"><?php the_field('surname_alphabet'); ?>　<?php the_field('given_name_alphabet'); ?></span></h1>
         </div>
     </div>
     <hr />
@@ -19,34 +19,45 @@ Template Name:  profile
         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
             <div class="media">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <img class="media-object img-rounded" src="<?php the_field('photo'); ?>" alt="プロフィール画像" style="width:150px; margin:0 auto;">
+                    <img class="media-object img-rounded pb_30" src="<?php the_field('photo'); ?>" alt="プロフィール画像" style="width:150px; margin:0 auto;">
                     <div class="takasa30"></div>
                     <a class="resumebtn" href="https://profile.nuevo.jp/wp-content/uploads/2022_%E5%B1%A5%E6%AD%B4%E6%9B%B8.pdf" target="_blank" role="button">履歴書</a>
                     <a class="resumebtn" href="https://profile.nuevo.jp/wp-content/uploads/2022_%E8%81%B7%E5%8B%99%E7%B5%8C%E6%AD%B4%E6%9B%B8.pdf" target="_blank" role="button">職務経歴書</a>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                    <h2 class="media-heading" style="margin-bottom:30px;">Web Creator / Web Director</h2>
-                    <div class="pr">
+                    <h2 class="media-heading" style="margin-bottom:30px;"><?php the_field('position'); ?></h2>
+                    <h3>
+                        <?php echo get_field_object('pr')['label']; ?>
+                    </h3>
+                    <p class="pr">
                         <?php the_field('pr'); ?>
-                    </div>
+                    </p>
                 </div>
             </div>
         </div>
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 well">
             <div class="row zero">
                 <div class="col-lg-12 zero">
-                    <h4>誕生日 : 1978年1月22日（満40歳）</h4>
+                    <p><?php echo get_field_object('birth')['label']; ?> : <?php the_field('birth'); ?></p>
                 </div>
                 <div class="col-lg-12 zero">
-                    <h4>電話番号 : 090-6480-0122</h4>
+                    <p><?php echo get_field_object('tel')['label']; ?> : <?php the_field('tel'); ?></p>
                 </div>
                 <div class="col-lg-12 zero">
-                    <h4>メールアドレス : okadub@coda.ocn.ne.jp</h4>
+                    <p><?php echo get_field_object('mail')['label']; ?> : <?php the_field('mail'); ?></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <h4 style="line-height:180%;"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>〒270−0114<br />千葉県流山市東初石１−１６９−４７</h4>
+                    <h4>
+                        <?php echo get_field_object('address')['label']; ?>
+                    </h4>
+                    <p style="line-height:180%;">
+                        <?php echo get_field_object('post_code')['label']; ?> : <?php the_field('post_code'); ?>
+                    </p>
+                    <p style="line-height:180%;">
+                        <?php the_field('address'); ?>
+                    </p>
                 </div>
             </div>
         </div>
@@ -56,155 +67,155 @@ Template Name:  profile
 <article class="container">
     <div class="row">
         <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
-            <h2>学歴</h2>
+            <h2><?php echo get_field_object('university_name')['label']; ?></h2>
             <hr />
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <h4>東洋大学</h4>
+                    <h4>
+                        <?php the_field('university_name'); ?>
+                    </h4>
+                    <span class="label label-default">
+                        <?php the_field('university_faculty'); ?><?php echo get_field_object('university_faculty')['label']; ?>
+                        <?php the_field('university_department'); ?><?php echo get_field_object('university_department')['label']; ?>
+                    </span>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <h4 class="text-right"> 1998/4 - 2002/3</h4>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left">
+                    <h4>
+                        <?php echo get_field_object('university_period_enter')['label']; ?>
+                    </h4>
+                    <p><?php the_field('university_period_enter'); ?> - <?php the_field('university_period_leaving'); ?></p4>
                 </div>
             </div>
-            <h4><span class="label label-default">社会学部　社会学科</span></h4>
+            <h4>
+                <?php echo get_field_object('university_activities')['label']; ?>
+            </h4>
             <p>
-                社会学部の中でメディア社会学を研究。携帯電話、モバイルの普及により社会の構造がどのように変化するか、コミュニケーションのあり方がどのように変わっていくのかを研究しておりました。在学中にHTML、
-                CSSなどのマークアップ言語を勉強。
+                <?php the_field('university_activities'); ?>
             </p>
             <div class="haba90 text-center">
                 <img src="<?php the_field('univercity'); ?>" alt="..." style="width:90%; margin:0 auto;"/>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h2>保有資格</h2>
+            </div>
+            <div class="haba90">
+                <ul class="zero">
+                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　普通自動車第一種免許（国家資格）</li>
+                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　初級システムアドミニストレータ（国家資格）</li>
+                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　基本情報処理技術者（国家資格）</li>
+                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　情報セキュリティマネジメント（国家資格）</li>
+                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　ＷＥＢデザイン技能検定２級（国家検定）</li>
+                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　ＷＥＢデザイン技能検定３級（国家検定）</li>
+                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　ＶＢＡエキスパート</li>
+                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　マイクロソフトオフィススペシャリストマスター（Excel2003 Word2003 Powerpoint2003 Access2003）</li>
+                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　.com Master ★ 2005</li>
+                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　Google Adwords Partner認定資格</li>
+                </ul>
             </div>
         </div>
         <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
             <h2>Skill Set</h2>
             <hr>
-            <!-- Green Progress Bar -->
-            <div class="progress">
-                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 95%"> HTML</div>
-            </div>
-            <!-- Blue Progress Bar -->
-            <div class="progress">
-                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 90%"> CSS</div>
-            </div>
-            <!-- Yellow Progress Bar -->
-            <div class="progress">
-                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 60%"> JAVASCRIPT</div>
-            </div>
-            <!-- Red Progress Bar -->
-            <div class="progress">
-                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%"> PHP</div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 55%"> VBA</div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 80%"> WORDPRESS</div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> cake PHP</div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 80%"> apatch</div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> nginx</div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 60%">mySQL</div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 90%"> PHOTOSHOP</div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 75%"> ILLUSTRATOR</div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 60%"> FLASH</div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 90%"> EXCEL</div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 90%"> WORD</div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 90%"> POWERPOINT</div>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 70%"> ACCESS</div>
-            </div>
+
+<div class="progress-container">
+    <h3>Front End</h3>
+    <?php
+        $frontend = array(
+            get_field_object('html')['label'] => get_field('html'),
+            get_field_object('css')['label'] => get_field('css'),
+            get_field_object('scss')['label'] => get_field('scss'),
+            get_field_object('javascript')['label'] => get_field('javascript'),
+            get_field_object('jquery')['label'] => get_field('jquery'),
+            get_field_object('vuejs')['label'] => get_field('vuejs'),
+            get_field_object('react')['label'] => get_field('react'),
+            get_field_object('node')['label'] => get_field('node')
+        );
+        foreach ($frontend as $key => $value) {
+            if ($value !== 0 && !empty($value)){
+                echo "<div class='progress'>";
+                echo "<div class='progress-bar' role='progressbar' aria-valuenow='$value' aria-valuemin='0' aria-valuemax='100' style='width: $value%;'>$key</div>";
+                echo "</div>";
+            }
+        }
+    ?>
+</div>
+<div class="progress-container">
+    <h3>Back End</h3>
+    <?php
+        $backend = array(
+            get_field_object('php')['label'] => get_field('php'),
+            get_field_object('python')['label'] => get_field('python'),
+            get_field_object('java')['label'] => get_field('java'),
+            get_field_object('go')['label'] => get_field('go'),
+            get_field_object('ruby')['label'] => get_field('ruby'),
+            get_field_object('perl')['label'] => get_field('perl'),
+            get_field_object('vb')['label'] => get_field('vb'),
+            get_field_object('r')['label'] => get_field('r'),
+            get_field_object('dart')['label'] => get_field('dart')
+        );
+        foreach ($backend as $key => $value) {
+            if ($value !== 0 && !empty($value)){
+                echo "<div class='progress'>";
+                echo "<div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='$value' aria-valuemin='0' aria-valuemax='100' style='width: $value%;'>$key</div>";
+                echo "</div>";
+            }
+        }
+    ?>
+</div>
+
+<div class="progress-container">
+    <h3>Develop Tool</h3>
+    <?php
+        $development = array(
+            get_field_object('git')['label'] => get_field('git'),
+            get_field_object('docker')['label'] => get_field('docker'),
+            get_field_object('ci')['label'] => get_field('ci'),
+            get_field_object('gulp')['label'] => get_field('gulp'),
+            get_field_object('vite')['label'] => get_field('vite'),
+            get_field_object('flutter')['label'] => get_field('flutter')
+        );
+        foreach ($development as $key => $value) {
+            if ($value !== 0 && !empty($value)){
+                echo "<div class='progress'>";
+                echo "<div class='progress-bar progress-bar-danger' role='progressbar' aria-valuenow='$value' aria-valuemin='0' aria-valuemax='100' style='width: $value%;'>$key</div>";
+                echo "</div>";
+            }
+        }
+    ?>
+</div>
+
+<div class="progress-container">
+    <h3>FrameWorks & CMS</h3>
+    <?php
+        $frameworks = array(
+            get_field_object('laravel')['label'] => get_field('laravel'),
+            get_field_object('cakephp')['label'] => get_field('cakephp'),
+            get_field_object('codeigniter')['label'] => get_field('codeigniter'),
+            get_field_object('smarty')['label'] => get_field('smarty'),
+            get_field_object('fuel')['label'] => get_field('fuel'),
+            get_field_object('wordpress')['label'] => get_field('wordpress'),
+            get_field_object('movabletype')['label'] => get_field('movabletype'),
+            get_field_object('aws')['label'] => get_field('aws'),
+            get_field_object('azure')['label'] => get_field('azure'),
+            get_field_object('gcp')['label'] => get_field('gcp'),
+            get_field_object('ai')['label'] => get_field('ai'),
+            get_field_object('apatch')['label'] => get_field('apatch'),
+            get_field_object('nginx')['label'] => get_field('nginx'),
+            get_field_object('mySql')['label'] => get_field('mySql')
+        );
+        foreach ($frameworks as $key => $value) {
+            if ($value !== 0 && !empty($value)){
+                echo "<div class='progress'>";
+                echo "<div class='progress-bar progress-bar-warning' role='progressbar' aria-valuenow='$value' aria-valuemin='0' aria-valuemax='100' style='width: $value%;'>$key</div>";
+                echo "</div>";
+            }
+        }
+    ?>
+</div>
+
         </div>
     </div>
-    <hr>
-<div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h2>保有資格</h2>
-        </div>
-        <div class="haba90">
-            <ul class="zero">
-                <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　普通自動車第一種免許（国家資格）</li>
-                <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　初級システムアドミニストレータ（国家資格）</li>
-                <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　基本情報処理技術者（国家資格）</li>
-                <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　情報セキュリティマネジメント（国家資格）</li>
-                <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　ＷＥＢデザイン技能検定２級（国家検定）</li>
-                <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　ＷＥＢデザイン技能検定３級（国家検定）</li>
-                <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　ＶＢＡエキスパート</li>
-                <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　マイクロソフトオフィススペシャリストマスター（Excel2003 Word2003 Powerpoint2003 Access2003）</li>
-                <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　.com Master ★ 2005</li>
-                <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　Google Adwords Partner認定資格</li>
-            </ul>
-        </div>
-    </div>
-    <div class='row'>
-        <div class='col-md-12'>
-            <div class="carousel slide media-carousel" id="media">
-                <div class="carousel-inner">
-                    <div class="item  active">
-                        <div class="row">
-                            <div class="col-md-4 skillframe">
-                                <a class="thumbnail" href="<?php the_field('skill01'); ?>" target="_blank"><img src="<?php the_field('skill01'); ?>" alt="..." style="width:90%; margin:0 auto;" /></a>
-                            </div>
-                            <div class="col-md-4 skillframe">
-                                <a class="thumbnail" href="<?php the_field('skill02'); ?>" target="_blank"><img src="<?php the_field('skill02'); ?>" alt="..." style="width:90%; margin:0 auto;" /></a>
-                            </div>
-                            <div class="col-md-4 skillframe">
-                                <a class="thumbnail" href="<?php the_field('skill03'); ?>" target="_blank"><img src="<?php the_field('skill03'); ?>" alt="..." style="width:90%; margin:0 auto;" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-md-4 skillframe">
-                                <a class="thumbnail" href="<?php the_field('skill04'); ?>" target="_blank"><img src="<?php the_field('skill04'); ?>" alt="..." style="width:90%; margin:0 auto;" /></a>
-                            </div>
-                            <div class="col-md-4 skillframe">
-                                <a class="thumbnail" href="<?php the_field('skill05'); ?>" target="_blank"><img src="<?php the_field('skill05'); ?>" alt="..." style="width:90%; margin:0 auto;" /></a>
-                            </div>
-                            <div class="col-md-4 skillframe">
-                                <a class="thumbnail" href="<?php the_field('skill06'); ?>" target="_blank"><img src="<?php the_field('skill06'); ?>" alt="..." style="width:90%; margin:0 auto;" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-md-4 skillframe">
-                                <a class="thumbnail" href="<?php the_field('skill07'); ?>" target="_blank"><img src="<?php the_field('skill07'); ?>" alt="..." style="width:90%; margin:0 auto;" /></a>
-                            </div>
-                            <div class="col-md-4 skillframe">
-                                <a class="thumbnail" href="<?php the_field('skill08'); ?>" target="_blank"><img src="<?php the_field('skill08'); ?>" alt="..." style="width:90%; margin:0 auto;" /></a>
-                            </div>
-                            <div class="col-md-4 skillframe">
-                                <a class="thumbnail" href="<?php the_field('skill09'); ?>" target="_blank"><img src="<?php the_field('skill09'); ?>" alt="..." style="width:90%; margin:0 auto;" /></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
-                <a data-slide="next" href="#media" class="right carousel-control">›</a>
-            </div>
-        </div>
-    </div>
-<hr />
+    <hr />
 <h2>職歴</h2>
 <hr />
 <div class="row">
