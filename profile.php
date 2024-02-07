@@ -93,7 +93,7 @@ Template Name:  profile
                 <?php the_field('university_activities'); ?>
             </p>
             <div class="haba90 text-center">
-                <img src="<?php the_field('univercity'); ?>" alt="..." style="width:90%; margin:0 auto;"/>
+                <img src="<?php the_field('university_img'); ?>" alt="..." style="width:90%; margin:0 auto;"/>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h2>保有資格</h2>
