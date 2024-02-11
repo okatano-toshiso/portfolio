@@ -683,3 +683,77 @@ ul {
 .pb_150 {
     padding-bottom: 150px;
 }
+
+.university, .qualification {
+    margin: 0;
+    padding: 30px 0 15px;
+    width: 100%;
+    font-size: 27px;
+    font-weight: 400;
+}
+
+.university_name {
+    padding-top: 5px;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.university_period {
+    padding-top: 5px;
+    margin: 0 10px 0 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.university_contents {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    padding: 15px 0;
+}
+
+.university_label {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    padding: 10px;
+    margin: 0 0 0 10px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #666;
+}
+
+.university_label-list {
+    margin-right: 10px;
+}
+
+.university_label-text {
+    margin: 0;
+}
+.qualification-contents {
+    display: block;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.qualification-badge {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    margin: 0;
+    width: 100%;
+}
+
+.qualification-row {
+    width: 100%;
+}
+
+.qualification-badge__image img {
+    margin: 5px 15px;
+    width: auto;
+    height: auto;
+    max-height: 50px;
+}
+.qualification-badge > .qualification-badge__image + .qualification-text {
+    line-height: 60px;
+}

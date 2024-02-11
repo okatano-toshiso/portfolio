@@ -16,7 +16,7 @@ Template Name:  profile
     </div>
     <hr />
     <div class="row">
-        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
             <div class="media">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <img class="media-object img-rounded pb_30" src="<?php the_field('photo'); ?>" alt="プロフィール画像" style="width:150px; margin:0 auto;">
@@ -35,29 +35,33 @@ Template Name:  profile
                 </div>
             </div>
         </div>
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 well">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 well">
             <div class="row zero">
                 <div class="col-lg-12 zero">
-                    <p><?php echo get_field_object('birth')['label']; ?> : <?php the_field('birth'); ?></p>
+                    <?php
+                        $birthday =  get_field('birth');
+                        $current_date = date("Y-m-d");
+                        $birthday_obj = new DateTime($birthday);
+                        $current_date_obj = new DateTime($current_date);
+                        $age = $current_date_obj->diff($birthday_obj)->y;
+                    ?>
+                    <p><b><?php echo get_field_object('birth')['label']; ?></b></p>
+                    <p><?php the_field('birth'); echo " ({$age}歳)"?></p>
                 </div>
                 <div class="col-lg-12 zero">
-                    <p><?php echo get_field_object('tel')['label']; ?> : <?php the_field('tel'); ?></p>
+                    <p><b><?php echo get_field_object('tel')['label']; ?></b></p>
+                    <p><?php the_field('tel'); ?></p>
                 </div>
                 <div class="col-lg-12 zero">
-                    <p><?php echo get_field_object('mail')['label']; ?> : <?php the_field('mail'); ?></p>
+                    <p><b><?php echo get_field_object('mail')['label']; ?></b></p>
+                    <p><?php the_field('mail'); ?></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <h4>
-                        <?php echo get_field_object('address')['label']; ?>
-                    </h4>
-                    <p style="line-height:180%;">
-                        <?php echo get_field_object('post_code')['label']; ?> : <?php the_field('post_code'); ?>
-                    </p>
-                    <p style="line-height:180%;">
-                        <?php the_field('address'); ?>
-                    </p>
+                    <p><b><?php echo get_field_object('address')['label']; ?></b></p>
+                    <?php echo get_field_object('post_code')['label']; ?>：<?php the_field('post_code'); ?><br />
+                    <?php the_field('address'); ?>
                 </div>
             </div>
         </div>
@@ -66,153 +70,191 @@ Template Name:  profile
 <hr />
 <article class="container">
     <div class="row">
-        <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
-            <h2><?php echo get_field_object('university_name')['label']; ?></h2>
+        <div class="col-lg8 col-md-8 col-sm-8 col-xs-12">
+            <h2 class="university"><?php echo get_field_object('university_name')['label']; ?></h2>
             <hr />
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <h4>
-                        <?php the_field('university_name'); ?>
-                    </h4>
-                    <span class="label label-default">
-                        <?php the_field('university_faculty'); ?><?php echo get_field_object('university_faculty')['label']; ?>
-                        <?php the_field('university_department'); ?><?php echo get_field_object('university_department')['label']; ?>
-                    </span>
+                    <div class="university_contents">
+                        <h4 class="university_name">
+                            <?php the_field('university_name'); ?>
+                        </h4>
+                        <ul class="university_label">
+                            <li class="university_label-list">
+                                <p class="university_label-text">
+                                    <?php the_field('university_faculty'); ?><?php echo get_field_object('university_faculty')['label']; ?>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="university_label-text">
+                                    <?php the_field('university_department'); ?><?php echo get_field_object('university_department')['label']; ?>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left">
-                    <h4>
-                        <?php echo get_field_object('university_period_enter')['label']; ?>
-                    </h4>
-                    <p><?php the_field('university_period_enter'); ?> - <?php the_field('university_period_leaving'); ?></p4>
+                    <div class="university_contents">
+                        <p class="university_period">
+                            <b><?php echo get_field_object('university_period_enter')['label']; ?></b>
+                        </p>
+                        <p class="university_period">
+                            <?php the_field('university_period_enter'); ?> - <?php the_field('university_period_leaving'); ?>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <h4>
+            <h4 class="university_name">
                 <?php echo get_field_object('university_activities')['label']; ?>
             </h4>
             <p>
                 <?php the_field('university_activities'); ?>
             </p>
-            <div class="haba90 text-center">
+            <div class="haba90 text-center pt_30">
                 <img src="<?php the_field('university_img'); ?>" alt="..." style="width:90%; margin:0 auto;"/>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h2>保有資格</h2>
-            </div>
-            <div class="haba90">
-                <ul class="zero">
-                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　普通自動車第一種免許（国家資格）</li>
-                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　初級システムアドミニストレータ（国家資格）</li>
-                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　基本情報処理技術者（国家資格）</li>
-                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　情報セキュリティマネジメント（国家資格）</li>
-                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　ＷＥＢデザイン技能検定２級（国家検定）</li>
-                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　ＷＥＢデザイン技能検定３級（国家検定）</li>
-                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　ＶＢＡエキスパート</li>
-                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　マイクロソフトオフィススペシャリストマスター（Excel2003 Word2003 Powerpoint2003 Access2003）</li>
-                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　.com Master ★ 2005</li>
-                    <li class="zero" style="font-size:14px;"><i class="fa fa-university" aria-hidden="true"></i>　Google Adwords Partner認定資格</li>
-                </ul>
+                <h2>Skill Set</h2>
+                <hr>
+                <div class="progress-container">
+                    <h3>Front End</h3>
+                    <?php
+                        $frontend = array(
+                            get_field_object('html')['label'] => get_field('html'),
+                            get_field_object('css')['label'] => get_field('css'),
+                            get_field_object('scss')['label'] => get_field('scss'),
+                            get_field_object('javascript')['label'] => get_field('javascript'),
+                            get_field_object('jquery')['label'] => get_field('jquery'),
+                            get_field_object('vuejs')['label'] => get_field('vuejs'),
+                            get_field_object('react')['label'] => get_field('react'),
+                            get_field_object('node')['label'] => get_field('node')
+                        );
+                        foreach ($frontend as $key => $value) {
+                            if ($value !== 0 && !empty($value)){
+                                echo "<div class='progress'>";
+                                echo "<div class='progress-bar' role='progressbar' aria-valuenow='$value' aria-valuemin='0' aria-valuemax='100' style='width: $value%;'>$key</div>";
+                                echo "</div>";
+                            }
+                        }
+                    ?>
+                </div>
+                <div class="progress-container">
+                    <h3>Back End</h3>
+                    <?php
+                        $backend = array(
+                            get_field_object('php')['label'] => get_field('php'),
+                            get_field_object('python')['label'] => get_field('python'),
+                            get_field_object('java')['label'] => get_field('java'),
+                            get_field_object('go')['label'] => get_field('go'),
+                            get_field_object('ruby')['label'] => get_field('ruby'),
+                            get_field_object('perl')['label'] => get_field('perl'),
+                            get_field_object('vb')['label'] => get_field('vb'),
+                            get_field_object('r')['label'] => get_field('r'),
+                            get_field_object('dart')['label'] => get_field('dart')
+                        );
+                        foreach ($backend as $key => $value) {
+                            if ($value !== 0 && !empty($value)){
+                                echo "<div class='progress'>";
+                                echo "<div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='$value' aria-valuemin='0' aria-valuemax='100' style='width: $value%;'>$key</div>";
+                                echo "</div>";
+                            }
+                        }
+                    ?>
+                </div>
+                <div class="progress-container">
+                    <h3>Develop Tool</h3>
+                    <?php
+                        $development = array(
+                            get_field_object('git')['label'] => get_field('git'),
+                            get_field_object('docker')['label'] => get_field('docker'),
+                            get_field_object('ci')['label'] => get_field('ci'),
+                            get_field_object('gulp')['label'] => get_field('gulp'),
+                            get_field_object('vite')['label'] => get_field('vite'),
+                            get_field_object('flutter')['label'] => get_field('flutter')
+                        );
+                        foreach ($development as $key => $value) {
+                            if ($value !== 0 && !empty($value)){
+                                echo "<div class='progress'>";
+                                echo "<div class='progress-bar progress-bar-danger' role='progressbar' aria-valuenow='$value' aria-valuemin='0' aria-valuemax='100' style='width: $value%;'>$key</div>";
+                                echo "</div>";
+                            }
+                        }
+                    ?>
+                </div>
+                <div class="progress-container">
+                    <h3>FrameWorks & CMS</h3>
+                    <?php
+                        $frameworks = array(
+                            get_field_object('laravel')['label'] => get_field('laravel'),
+                            get_field_object('cakephp')['label'] => get_field('cakephp'),
+                            get_field_object('codeigniter')['label'] => get_field('codeigniter'),
+                            get_field_object('smarty')['label'] => get_field('smarty'),
+                            get_field_object('fuel')['label'] => get_field('fuel'),
+                            get_field_object('wordpress')['label'] => get_field('wordpress'),
+                            get_field_object('movabletype')['label'] => get_field('movabletype'),
+                            get_field_object('aws')['label'] => get_field('aws'),
+                            get_field_object('azure')['label'] => get_field('azure'),
+                            get_field_object('gcp')['label'] => get_field('gcp'),
+                            get_field_object('ai')['label'] => get_field('ai'),
+                            get_field_object('apatch')['label'] => get_field('apatch'),
+                            get_field_object('nginx')['label'] => get_field('nginx'),
+                            get_field_object('mySql')['label'] => get_field('mySql')
+                        );
+                        foreach ($frameworks as $key => $value) {
+                            if ($value !== 0 && !empty($value)){
+                                echo "<div class='progress'>";
+                                echo "<div class='progress-bar progress-bar-warning' role='progressbar' aria-valuenow='$value' aria-valuemin='0' aria-valuemax='100' style='width: $value%;'>$key</div>";
+                                echo "</div>";
+                            }
+                        }
+                    ?>
+                </div>
             </div>
         </div>
-        <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
-            <h2>Skill Set</h2>
-            <hr>
-
-<div class="progress-container">
-    <h3>Front End</h3>
-    <?php
-        $frontend = array(
-            get_field_object('html')['label'] => get_field('html'),
-            get_field_object('css')['label'] => get_field('css'),
-            get_field_object('scss')['label'] => get_field('scss'),
-            get_field_object('javascript')['label'] => get_field('javascript'),
-            get_field_object('jquery')['label'] => get_field('jquery'),
-            get_field_object('vuejs')['label'] => get_field('vuejs'),
-            get_field_object('react')['label'] => get_field('react'),
-            get_field_object('node')['label'] => get_field('node')
-        );
-        foreach ($frontend as $key => $value) {
-            if ($value !== 0 && !empty($value)){
-                echo "<div class='progress'>";
-                echo "<div class='progress-bar' role='progressbar' aria-valuenow='$value' aria-valuemin='0' aria-valuemax='100' style='width: $value%;'>$key</div>";
-                echo "</div>";
-            }
-        }
-    ?>
-</div>
-<div class="progress-container">
-    <h3>Back End</h3>
-    <?php
-        $backend = array(
-            get_field_object('php')['label'] => get_field('php'),
-            get_field_object('python')['label'] => get_field('python'),
-            get_field_object('java')['label'] => get_field('java'),
-            get_field_object('go')['label'] => get_field('go'),
-            get_field_object('ruby')['label'] => get_field('ruby'),
-            get_field_object('perl')['label'] => get_field('perl'),
-            get_field_object('vb')['label'] => get_field('vb'),
-            get_field_object('r')['label'] => get_field('r'),
-            get_field_object('dart')['label'] => get_field('dart')
-        );
-        foreach ($backend as $key => $value) {
-            if ($value !== 0 && !empty($value)){
-                echo "<div class='progress'>";
-                echo "<div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='$value' aria-valuemin='0' aria-valuemax='100' style='width: $value%;'>$key</div>";
-                echo "</div>";
-            }
-        }
-    ?>
-</div>
-
-<div class="progress-container">
-    <h3>Develop Tool</h3>
-    <?php
-        $development = array(
-            get_field_object('git')['label'] => get_field('git'),
-            get_field_object('docker')['label'] => get_field('docker'),
-            get_field_object('ci')['label'] => get_field('ci'),
-            get_field_object('gulp')['label'] => get_field('gulp'),
-            get_field_object('vite')['label'] => get_field('vite'),
-            get_field_object('flutter')['label'] => get_field('flutter')
-        );
-        foreach ($development as $key => $value) {
-            if ($value !== 0 && !empty($value)){
-                echo "<div class='progress'>";
-                echo "<div class='progress-bar progress-bar-danger' role='progressbar' aria-valuenow='$value' aria-valuemin='0' aria-valuemax='100' style='width: $value%;'>$key</div>";
-                echo "</div>";
-            }
-        }
-    ?>
-</div>
-
-<div class="progress-container">
-    <h3>FrameWorks & CMS</h3>
-    <?php
-        $frameworks = array(
-            get_field_object('laravel')['label'] => get_field('laravel'),
-            get_field_object('cakephp')['label'] => get_field('cakephp'),
-            get_field_object('codeigniter')['label'] => get_field('codeigniter'),
-            get_field_object('smarty')['label'] => get_field('smarty'),
-            get_field_object('fuel')['label'] => get_field('fuel'),
-            get_field_object('wordpress')['label'] => get_field('wordpress'),
-            get_field_object('movabletype')['label'] => get_field('movabletype'),
-            get_field_object('aws')['label'] => get_field('aws'),
-            get_field_object('azure')['label'] => get_field('azure'),
-            get_field_object('gcp')['label'] => get_field('gcp'),
-            get_field_object('ai')['label'] => get_field('ai'),
-            get_field_object('apatch')['label'] => get_field('apatch'),
-            get_field_object('nginx')['label'] => get_field('nginx'),
-            get_field_object('mySql')['label'] => get_field('mySql')
-        );
-        foreach ($frameworks as $key => $value) {
-            if ($value !== 0 && !empty($value)){
-                echo "<div class='progress'>";
-                echo "<div class='progress-bar progress-bar-warning' role='progressbar' aria-valuenow='$value' aria-valuemin='0' aria-valuemax='100' style='width: $value%;'>$key</div>";
-                echo "</div>";
-            }
-        }
-    ?>
-</div>
-
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <h2 class="qualification">保有資格</h2>
+            <hr />
+            <?php for ($i = 1; $i < 20; $i++): ?>
+                <?php if(get_field('qualification_'.$i.'_name')): ?>
+                    <article class="qualification-contents">
+                        <div class="qualification-label qualification-row">
+                            <dl class="qualification-badge">
+                                <?php if(get_field('qualification_'.$i.'_badge')): ?>
+                                    <figure class="qualification-badge__image">
+                                        <img src="<?php $badge_img = get_field('qualification_'.$i.'_badge'); echo $badge_img["url"];?>" alt="<?php echo get_field_object('qualification_'.$i.'_badge')['label']; ?>" />
+                                    </figure>
+                                <?php endif; ?>
+                                <?php if(get_field('qualification_'.$i.'_name')): ?>
+                                    <p class="qualification-text"><?php the_field('qualification_'.$i.'_name'); ?></p>
+                                <?php endif; ?>
+                            </dl>
+                        </div>
+                        <?php if(get_field('qualification_'.$i.'_acquisition')): ?>
+                            <div class="qualification-acquisition qualification-label">
+                                <?php echo get_field_object('qualification_'.$i.'_acquisition')['label']; ?>：
+                                <?php
+                                    $date_raw = get_field('qualification_'.$i.'_acquisition');
+                                    $date_formatted = date("Y-m", strtotime($date_raw));
+                                    echo $date_formatted;
+                                ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if(get_field('qualification_'.$i.'_type')): ?>
+                            <div class="qualification-label qualification-label">
+                                <?php echo get_field_object('qualification_'.$i.'_type')['label']; ?>：<?php the_field('qualification_'.$i.'_type'); ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if(get_field('qualification_'.$i.'_image')): ?>
+                            <div class="qualification-image qualification-label">
+                                <figure>
+                                    <img src="<?php the_field('qualification_'.$i.'_image'); ?>" alt="<?php echo get_field_object('qualification_'.$i.'_image')['label']; ?>" />
+                                </figure>
+                            </div>
+                        <?php endif; ?>
+                    </article>
+                    <hr />
+                <?php endif; ?>
+            <?php endfor; ?>
         </div>
     </div>
     <hr />
