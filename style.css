@@ -757,3 +757,35 @@ ul {
 .qualification-badge > .qualification-badge__image + .qualification-text {
     line-height: 60px;
 }
+
+.sns_label {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+.sns_image {
+    width: 50px;
+    margin: 0 auto;
+}
+.sns_logo {
+    width: 100%;
+}
+.sns_link {
+    display: block;
+    width: auto;
+    color: #222;
+    text-align: center;
+    text-decoration: none;
+}
+.sns_link:hover {
+    color: #222;
+}
+
+.sns_fields {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.sns_name {
+    margin-top: 10px;
+}

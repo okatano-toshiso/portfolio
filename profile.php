@@ -66,8 +66,30 @@ Template Name:  profile
             </div>
         </div>
     </div>
+    <div class="row">
+        <hr />
+        <article class="sns_fields">
+            <h2 class="sns_label">SNSアカウント</h2>
+            <?php for ($i = 1; $i < 6; $i++): ?>
+                <?php if(get_field('sns_'.$i.'_name')): ?>
+                    <article class="sns">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 center">
+                            <a href="<?php the_field('sns_'.$i.'_url'); ?>" target="_blank" class="sns_link" >
+                                <figure class="sns_image">
+                                    <img class="sns_logo" src="<?php the_field('sns_'.$i.'_image'); ?>" />
+                                </figure>
+                                <p class="sns_name">
+                                    <?php the_field('sns_'.$i.'_name'); ?>
+                                </p>
+                            </a>
+                        </div>
+                    </article>
+                <?php endif; ?>
+            <?php endfor; ?>
+        </article>
+    </div>
+    <hr />
 </article>
-<hr />
 <article class="container">
     <div class="row">
         <div class="col-lg8 col-md-8 col-sm-8 col-xs-12">
