@@ -135,21 +135,21 @@ Template Name: portfolio_top
 			$image = wp_get_attachment_url($image);
 		}
     ?>
-			<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 text-left" style="height: 230px; overflow: hidden;">
+			<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 text-left" style="height:auto; min-height: 230px; overflow: hidden;">
 				<div class="yokohaba95">
 					<a href="<?php the_permalink(); ?>">
 						<div class="frame03">
 							<div class="garallyimg03" style="background-image: url(<?php the_field('image'); ?>);"></div>
 						</div>
 					</a>
-					<p class="case_title text-left haba95" style="height: 60px; line-height: 140%; overflow: hidden; margin-top: 10px;">
+					<p class="case_title text-left haba95 pb_30" style="height: 60px; line-height: 140%; overflow: hidden; margin-top: 10px;">
 						<?php echo mb_substr($post->post_title, 0, 30); ?>
 					</p>
 				</div>
 			</div>
 		<?php endforeach; ?>
 	<?php endif; ?>
-	<div class="row pt_30 pb_90">
+	<div class="row pt_30 pb_30">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 			<a href="/works/" class="btn_detail">もっと見る</a>
 		</div>

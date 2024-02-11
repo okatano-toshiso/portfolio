@@ -789,3 +789,70 @@ ul {
 .sns_name {
     margin-top: 10px;
 }
+
+.site-footer {
+    padding-top: 60px;
+}
+
+.history {
+    width: 100%;
+}
+.history_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    overflow: hidden;
+    width: 100%;
+}
+.history_area {
+    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
+    @media screen and (min-width: 769px) {
+        width: 50%;
+    }
+}
+.history_field {
+    width: 100%;
+}
+
+.history_title {
+    font-size: 20px;
+}
+
+.history_block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.history_frame {
+    overflow: hidden;
+    width: auto;
+    max-width: 50%;
+    height: 150px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.history_image {
+    width: 100%;
+}
+.history_text {
+    padding: 15px 10px;
+}
+.history_text .label {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.history_label {
+    padding: 0;
+}
+.history_list {
+    padding: 0 10px;
+    margin: 0;
+}

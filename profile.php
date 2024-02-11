@@ -280,188 +280,75 @@ Template Name:  profile
         </div>
     </div>
     <hr />
-<h2>職歴</h2>
-<hr />
-<div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <article class="history">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4>タワーレコード株式会社</h4>
+                <h2>職歴</h2>
+                <div class="history_content">
+                    <?php for ($i = 20; $i > 0; $i--): ?>
+                        <?php if(get_field('job_'.$i.'_name')): ?>
+                            <div class="history_area">
+                                <div class="history_field">
+                                    <h3 class="history_title"><?php the_field('job_'.$i.'_name') ?></h3>
+                                </div>
+                                <div class="history_block">
+                                    <div class="history_frame">
+                                        <img src="<?php the_field('job_'.$i.'_img') ?>" class="history_image"/>
+                                    </div>
+                                    <div class="history_data">
+                                        <ul class="history_list">
+                                            <li>
+                                                <?php echo get_field_object('job_'.$i.'_period_hire')['label']; ?>：
+                                                <?php
+                                                    $date_raw = get_field('job_'.$i.'_period_hire');
+                                                    $date_formatted = date("Y-m", strtotime($date_raw));
+                                                    echo $date_formatted;
+                                                ?>
+                                                〜
+                                                <?php
+                                                    $date_raw = get_field('job_'.$i.'_period_leave');
+                                                    $date_formatted = date("Y-m", strtotime($date_raw));
+                                                    echo $date_formatted;
+                                                ?>
+                                            </li>
+                                            <li>
+                                                <?php echo get_field_object('job_'.$i.'_income')['label']; ?>：
+                                                <?php the_field('job_'.$i.'_income') ?>円
+                                            </li>
+                                            <li>
+                                                <?php echo get_field_object('job_'.$i.'_type')['label']; ?>：
+                                                <?php the_field('job_'.$i.'_type') ?>
+                                            </li>
+                                            <li>
+                                                <?php echo get_field_object('job_'.$i.'_number')['label']; ?>：
+                                                <?php the_field('job_'.$i.'_number') ?>
+                                            </li>
+                                            <li>
+                                                <?php echo get_field_object('job_'.$i.'_capital')['label']; ?>：
+                                                <?php the_field('job_'.$i.'_capital') ?>
+                                            </li>
+                                            <li>
+                                                <?php
+                                                    if(get_field('job_'.$i.'_url')):
+                                                ?>
+                                                    <a href="<?php the_field('job_'.$i.'_url') ?>" target="_blank"><?php echo get_field_object('job_'.$i.'_url')['label']; ?></a>
+                                                <?php
+                                                    endif;
+                                                ?>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="history_text">
+                                    <span class="label label-default"><?php the_field('job_'.$i.'_role') ?></span>
+                                    <?php the_field('job_'.$i.'_explanation') ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    <?php endfor; ?>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                <div style="background-image:url(<?php the_field('job01'); ?>); width:300px; height:200px; background-position:top center; background-size:cover; margin:0 auto;"></div>
-            </div>
-            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-            <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 2003/7 - 2005/3</p>
-            <p>年収：２１６万円</p>
-            <p>雇用形態：契約社員</p>
-            <p>資本金：－</p>
-            <p>従業員数：２００人</p>
-        </div>
-    </div>
-    <div class="takasa15"></div>
-        <h4><span class="label label-default">アシスタントバイヤー</span></h4>
-        <div class="takasa15"></div>
-        <p>タワーレコードオンラインのＤＶＤのアシスタントバイヤーを経験。ＤＶＤの商品データ入力作業、ＤＶＤの特設ページの制作、映像会社との渉外業務を担当。タワーレコード限定のパッケージングやグッズの手配、及びライセンスの確保を担当しておりました。</p>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4>株式会社レコード新聞社</h4>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-            <div style="background-image:url(<?php the_field('job02'); ?>); width:300px; height:200px; background-position:top center; background-size:cover; margin:0 auto;"></div>
-        </div>
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-            <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 2005/10 - 2006/8</p>
-            <p>年収：２１６万円</p>
-            <p>雇用形態：正社員</p>
-            <p>資本金：－</p>
-            <p>従業員数：１０人</p>
-        </div>
-    </div>
-    <div class="takasa15"></div>
-    <h4><span class="label label-default">雑誌編集者</span></h4>
-    <div class="takasa15"></div>
-        <p>Ｂ to Ｂ向けの音楽カタログ雑誌の編集、オペレーションを担当。原稿の執筆やライターとの制作進行管理も兼任しておりました。</p>
-    </div>
-</div>
-<div style="width:100%; height:30px;"></div>
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h4>株式会社ＶＩＢＥ</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                    <div style="background-image:url(<?php the_field('job03'); ?>); width:300px; height:200px; background-position:top center; background-size:cover; margin:0 auto;"></div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 2006/9 - 2008/3</p>
-                    <p>年収：３００万円</p>
-                    <p>雇用形態：契約社員</p>
-                    <p>資本金：－</p>
-                    <p>従業員数：１０人</p>
-                </div>
-            </div>
-            <h4><span class="label label-default">モバイルサイト運営</span></h4>
-            <p>ＨＭＶの着メロ、着うた、着うたフルのモバイルサイト、自社モバイルサイト、スノーボーダー向けのモバイルサイトの運営をしておりました。計７サイトの運営・管理に関わることで多くのことを学べました。</p>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h4>株式会社オリコンＭＥ</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                    <div style="background-image:url(<?php the_field('job04'); ?>); width:300px; height:200px; background-position:top center; background-size:cover; margin:0 auto;"></div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 2008/4 - 2009/3</p>
-                    <p>年収：３３０万円</p>
-                    <p>雇用形態：正社員</p>
-                    <p>資本金：－</p>
-                    <p>従業員数：２５０人</p>
-                </div>
-            </div>
-            <h4><span class="label label-default">モバイルサイト運営</span></h4>
-            <p>オリコンの自社モバイルサイトの運営管理を担当。</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h4>株式会社スピードスターミュージック</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                    <div style="background-image:url(<?php the_field('job05'); ?>); width:300px; height:200px; background-position:top center; background-size:cover;margin:0 auto;"></div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 2009/5 - 2010/3</p>
-                    <p>年収：４５０万円</p>
-                    <p>雇用形態：正社員</p>
-                    <p>資本金：－</p>
-                    <p>従業員数：１０人</p>
-                </div>
-            </div>
-            <h4><span class="label label-default">ＷＥＢ担当</span></h4>
-            <p>所属アーティストのサイト制作、構築から運営管理を担当。社内インフラ整備も担当しておりました。</p>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h4>株式会社インデックス</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                    <div style="background-image:url(<?php the_field('job06'); ?>); width:300px; height:200px; background-position:top center; background-size:cover; margin:0 auto;"></div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 2010/4 - 2011/3</p>
-                    <p>年収：４００万円</p>
-                    <p>雇用形態：正社員</p>
-                    <p>資本金：－</p>
-                    <p>従業員数：４００人</p>
-                </div>
-            </div>
-            <h4><span class="label label-default">サイトディレクター</span></h4>
-            <p>テレビ朝日のモバイルサイト運営管理。１００満人以上の大規模サイトの運営とテレビ局との渉外業務を担当しておりました。</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h4>アットザラウンジ株式会社</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                    <div style="background-image:url(<?php the_field('job07'); ?>); width:300px; height:200px; background-position:top center; background-size:cover; margin:0 auto;"></div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 2012/12 - 2013/7</p>
-                    <p>年収：３００万円</p>
-                    <p>雇用形態：契約社員</p>
-                    <p>資本金：－</p>
-                    <p>従業員数：４人</p>
-                </div>
-            </div>
-            <h4><span class="label label-default">ＷＥＢ担当</span></h4>
-            <p>知人の会社に契約社員としてヘルプで勤務。電子書籍サイトの運営管理をしていました。EC-CUBEによるサイト構築、修正業務。</p>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h4>株式会社ＤＡＣホールディングス</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                    <div style="background-image:url(<?php the_field('job08'); ?>); width:300px; height:200px; background-position:top center; background-size:cover; margin:0 auto;"></div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <p><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 2014/1 - 2017/6</p>
-                    <p>年収：４００万円</p>
-                    <p>雇用形態：正社員</p>
-                    <p>資本金：－</p>
-                    <p>従業員数：５００人</p>
-                </div>
-            </div>
-            <h4><span class="label label-default">ＷＥＢクリエイター</span></h4>
-            <p>広告バナー作成、ｗｅｂサイト制作及び構築、サーバ構築、システム開発を担当。ｗｅｂ案件を制作・開発会社にすべてアウトソーシングするという会社の決定により転職を決意。</p>
-        </div>
-    </div>
+    </article>
 </article>
 <?php get_footer(); ?>

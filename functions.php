@@ -2,6 +2,7 @@
 include_once('functions-include/acf.php');
 include_once('functions-include/acf_qualification.php');
 include_once('functions-include/acf_sns.php');
+include_once('functions-include/acf_job.php');
 
 if (! isset($content_width)) {
     $content_width = 660;
