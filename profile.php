@@ -307,6 +307,9 @@ Template Name:  profile
                                                 〜
                                                 <?php
                                                     $date_raw = get_field('job_'.$i.'_period_leave');
+                                                    if ($date_raw == '') {
+                                                        $date_raw = date("Y-m-d H:i:s");
+                                                    }
                                                     $date_formatted = date("Y-m", strtotime($date_raw));
                                                     echo $date_formatted;
                                                 ?>

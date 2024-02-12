@@ -99,7 +99,7 @@ Template Name: works
 		if (have_posts()) :
 			while(have_posts()) : the_post();
 		?>
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 text-left" style="min-height: 420px; overflow: hidden;">
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 text-left gallery_area">
 					<div class="yokohaba95">
 						<a href="<?php the_permalink(); ?>">
 							<!-- img src="<?php the_field('image'); ?>" class="garallysize" / -->
@@ -114,7 +114,7 @@ Template Name: works
 							<?php echo mb_substr((post_custom('information')),0,80); ?>...
 						</p>
 						<div class="takasa15"></div>
-						<div class="text-center">
+						<div class="gallery_footer text-center">
 							<a href="<?php the_permalink(); ?>" class="detail">
 								詳細はこちら　<i class="fa fa-chevron-right" aria-hidden="true"></i>
 							</a>

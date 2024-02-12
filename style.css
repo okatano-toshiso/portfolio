@@ -856,3 +856,15 @@ ul {
     padding: 0 10px;
     margin: 0;
 }
+.gallery_area {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    min-height: 390px;
+    margin-bottom: 15px;
+}
+.gallery_footer {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 20px);
+}

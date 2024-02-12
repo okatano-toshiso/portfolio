@@ -52,8 +52,8 @@
 			<div class="takasa15"></div>
 			<li><a class="drawer-menu-item" href="<?php echo home_url(); ?>"><p><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>　TOP</p></a></li>
 			<li><a href="<?php echo home_url(); ?>/profile/" class="zero"><p><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>　PROFILE</p></a></li>
+			<li><a href="<?php echo home_url(); ?>/works/" class="zero"><p><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>　WORKS</p></a></li>
 			<li><a href="<?php echo home_url(); ?>/works/?brand=web" class="zero"><p><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>　WEB</p></a></li>
-			<li><a href="<?php echo home_url(); ?>/works/?brand=banner" class="zero"><p><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>　BANNER</p></a></li>
 			<li><a href="<?php echo home_url(); ?>/works/?brand=proposal" class="zero"><p><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>　PROPOSAL</p></a></li>
 		</ul>
 	</nav>
@@ -79,15 +79,15 @@
 					</div>
 					<div class="col-lg-2 col-md-2 hidden-sm hidden-xs text-center zero menu">
 						<div class="takasa15"></div>
+						<a href="<?php echo home_url(); ?>/works/" class="zero"><p>WORKS</p></a>
+					</div>
+					<div class="col-lg-2 col-md-2 hidden-sm hidden-xs text-center zero menu">
+						<div class="takasa15"></div>
 						<a href="<?php echo home_url(); ?>/works/?brand=web" class="zero"><p>WEB</p></a>
 					</div>
 					<div class="col-lg-2 col-md-2 hidden-sm hidden-xs text-center zero menu">
 						<div class="takasa15"></div>
 						<a href="<?php echo home_url(); ?>/works/?brand=lp" class="zero"><p>LP</p></a>
-					</div>
-					<div class="col-lg-2 col-md-2 hidden-sm hidden-xs text-center zero menu">
-						<div class="takasa15"></div>
-						<a href="<?php echo home_url(); ?>/works/?brand=banner" class="zero"><p>BANNER</p></a>
 					</div>
 					<div class="col-lg-2 col-md-2 hidden-sm hidden-xs text-center zero menu">
 						<div class="takasa15"></div>
