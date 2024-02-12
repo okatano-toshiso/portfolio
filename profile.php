@@ -21,8 +21,8 @@ Template Name:  profile
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <img class="media-object img-rounded pb_30" src="<?php the_field('photo'); ?>" alt="プロフィール画像" style="width:150px; margin:0 auto;">
                     <div class="takasa30"></div>
-                    <a class="resumebtn" href="https://profile.nuevo.jp/wp-content/uploads/2022_%E5%B1%A5%E6%AD%B4%E6%9B%B8.pdf" target="_blank" role="button">履歴書</a>
-                    <a class="resumebtn" href="https://profile.nuevo.jp/wp-content/uploads/2022_%E8%81%B7%E5%8B%99%E7%B5%8C%E6%AD%B4%E6%9B%B8.pdf" target="_blank" role="button">職務経歴書</a>
+                    <a class="resumebtn" href="<?php the_field('resume'); ?>" target="_blank" role="button">履歴書</a>
+                    <a class="resumebtn" href="<?php the_field('curriculum_vitae'); ?>" target="_blank" role="button">職務経歴書</a>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                     <h2 class="media-heading" style="margin-bottom:30px;"><?php the_field('position'); ?></h2>
