@@ -69,7 +69,7 @@ Template Name:  profile
     <div class="row">
         <hr />
         <article class="sns_fields">
-            <h2 class="sns_label">SNSアカウント</h2>
+            <h2 class="sns_label">SNS</h2>
             <?php for ($i = 1; $i < 6; $i++): ?>
                 <?php if(get_field('sns_'.$i.'_name')): ?>
                     <article class="sns">
